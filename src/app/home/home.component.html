@@ -1,0 +1,43 @@
+
+
+<div class="slider">
+  <div class="slide" *ngFor="let img of public; let i = index" [class.active]="i === currentIndex">
+    <img [src]="img" alt="Slide {{ i + 1 }}">
+  </div>
+</div>
+
+
+<div class="home-page">
+  <header class="header">
+    
+
+    <h1>Welcome to the Parkinson's Disease Website</h1>
+    <p>This website is dedicated to providing information and support for individuals and families affected by Parkinson's Disease.</p>
+  </header>
+
+  <section class="about-section">
+    <h2>What is Parkinson's Disease?</h2>
+    <p>Parkinson's Disease is a progressive neurological disorder that affects movement. It starts with mild symptoms such as tremors and muscle stiffness, and can progress to issues with balance and walking.</p>
+  </section>
+
+  <section class="symptoms-section">
+    <h2>Symptoms of the Disease</h2>
+    <ul>
+      <li>Tremors in the hands, arms, or legs</li>
+      <li>Muscle stiffness</li>
+      <li>Slowness of movement</li>
+      <li>Balance problems</li>
+    </ul>
+  </section>
+
+  <section class="resources-section">
+    <h2>Useful Resources</h2>
+    <p>Here are some resources that may help you understand and manage the disease:</p>
+    <ul>
+      <li><a href="https://www.parkinson.org" target="_blank">Parkinson's Foundation</a></li>
+      <li><a href="https://www.michaeljfox.org" target="_blank">Michael J. Fox Foundation</a></li>
+    </ul>
+  </section>
+
+ 
+</div>

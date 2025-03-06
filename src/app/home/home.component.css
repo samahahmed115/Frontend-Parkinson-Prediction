@@ -1,0 +1,31 @@
+.slider {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+  animation: fade 1s;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
