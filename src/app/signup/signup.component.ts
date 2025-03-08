@@ -16,19 +16,28 @@ export class SignupComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  onSubmit() {
-    if (this.password !== this.confirmPassword) {
-      alert('Passwords do not match.');
-      return;
-    }
+  usernameError: boolean = false;
+  emailError: boolean = false;
+  passwordError: boolean = false;
+  confirmPasswordError: boolean = false;
+  passwordMismatch: boolean = false;
 
-    if (this.username && this.email && this.password) {
+  onSubmit() {
+    // إعادة تعيين الأخطاء إلى `false` قبل بدء التحقق
+    this.usernameError = this.username.trim() === '';
+    this.emailError = this.email.trim() === '';
+    this.passwordError = this.password.trim() === '';
+    this.confirmPasswordError = this.confirmPassword.trim() === '';
+    
+    // التحقق من تطابق كلمتي المرور
+    this.passwordMismatch = this.password !== this.confirmPassword && !this.confirmPasswordError;
+
+    // إذا لم تكن هناك أخطاء، نقوم بإرسال البيانات
+    if (!this.usernameError && !this.emailError && !this.passwordError && !this.confirmPasswordError && !this.passwordMismatch) {
       console.log('Username:', this.username);
       console.log('Email:', this.email);
       console.log('Password:', this.password);
-      // يمكنك هنا إضافة منطق إرسال البيانات إلى الخادم
-    } else {
-      alert('Please fill in all fields.');
+      // هنا يمكنك إضافة منطق إرسال البيانات إلى السيرفر
     }
   }
 }

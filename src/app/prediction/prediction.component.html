@@ -1,1 +1,43 @@
-<p>prediction works!</p>
+<div class="prediction-container">
+    <h2>Parkinson's Disease Prediction</h2>
+    <p>Upload an image for analysis.</p>
+
+    <!-- صندوق رفع الصورة -->
+    <div class="upload-box" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+        <p *ngIf="!imagePreview">
+            <i class="fa fa-upload"></i> Upload Image
+        </p>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" #fileInput hidden>
+        <img *ngIf="imagePreview" [src]="imagePreview" alt="Uploaded Image">
+    </div>
+
+    <!-- أزرار تحميل الصورة أو التقاط صورة -->
+    <div class="buttons-container">
+        <button (click)="triggerFileInput()">
+            <i class="fa fa-upload"></i> Choose Image
+        </button>
+        <button (click)="captureImage()">
+            <i class="fa fa-camera"></i> Take Photo
+        </button>
+    </div>
+
+    <!-- زر التحليل -->
+    <button (click)="analyzeImage()" [disabled]="!selectedFile || isLoading">
+        <i class="fa fa-search"></i> Analyze
+    </button>
+
+    <!-- مؤشر التحميل -->
+    <div *ngIf="isLoading" class="loading-spinner"></div>
+
+    <!-- عرض النتيجة -->
+    <div class="result-box" *ngIf="predictionResult && !isLoading">
+        <h3>Result:</h3>
+        <p>{{ predictionResult }}</p>
+        <button class="download-btn" (click)="downloadPDF()">
+            <i class="fa fa-file-pdf"></i> Download Report
+        </button>
+        <button class="reset-btn" (click)="resetPrediction()">
+            <i class="fa fa-refresh"></i> Upload New Image
+        </button>
+    </div>
+</div>

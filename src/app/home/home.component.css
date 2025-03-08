@@ -1,31 +1,406 @@
-.slider {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  overflow: hidden;
+/* حاوية السلايد */
+.slideshow-container {
   position: relative;
+  width: 90%; /* زيادة العرض قليلاً ليبدو جيدًا على الشاشات الصغيرة */
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  margin-top: 0;
+  margin-top: 2px;
 }
 
-.slide {
-  display: none;
-}
-
-.slide.active {
+/* ضبط الصور */
+.slide-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
   display: block;
-  animation: fade 1s;
+  margin: auto;
 }
 
-img {
+/* العنوان فوق الصور */
+.slideshow-title {
+  position: absolute;
+  top: 5%; /* جعل العنوان أكثر مرونة */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+}
+
+/* نقاط التنقل */
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: rgba(59, 58, 58, 0.7);
+  transform: scale(1.2);
+}
+
+/* تحسين الاستجابة على الشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .slide-image {
+    height: 250px; /* تقليل الارتفاع على الهواتف */
+  }
+  
+  .slideshow-title {
+    font-size: 24px; /* تصغير العنوان ليلائم الشاشات الصغيرة */
+    padding: 5px 10px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slide-image {
+    height: 200px; /* تقليل الارتفاع أكثر للهواتف الصغيرة */
+  }
+
+  .slideshow-title {
+    font-size: 20px; /* تصغير العنوان أكثر */
+    padding: 5px 10px;
+  }
+}
+
+
+
+
+/* الحاوية الرئيسية */
+.about-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* العنوان الرئيسي */
+.about-title {
+  font-size: 32px;
+  color: #070707;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* جعل المربعات في خط واحد */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; /* مسافة بين المربعات */
+}
+
+/* تنسيق المربعات */
+.about-box {
+  flex: 1;
+  background: linear-gradient(to right, #2c3e50, #34495e); /* تدرج ألوان جذاب */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* تأثير ظل لرفع العنصر */
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* جعل المربعات فوق بعض على الشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+/* الحاوية الرئيسية */
+.symptoms-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* العنوان الرئيسي */
+.symptoms-title {
+  font-size: 32px;
+  color: #0a0a0a;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* جعل النص والصورة في خط واحد */
+.symptoms-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; /* مسافة بين النص والصورة */
+}
+
+/* تنسيق مربع الأعراض */
+.symptoms-box {
+  flex: 1;
+  background: linear-gradient(to right, #2c3e50, #34495e); /* تدرج ألوان جذاب */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* تأثير ظل */
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* تنسيق القائمة */
+.symptoms-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.symptoms-box li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* أيقونات مميزة */
+.symptoms-box li span {
+  color: #ffcc00;
+  font-size: 22px;
+}
+
+/* تنسيق الصورة */
+.symptoms-image {
+  flex: 1;
+  max-width: 40%;
+}
+
+.symptoms-image img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* ظل */
+  transition: transform 0.3s ease-in-out;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0.4;
+/* تأثير عند تمرير الماوس على الصورة */
+.symptoms-image img:hover {
+  transform: scale(1.05);
+}
+
+/* جعل النص والصورة فوق بعض على الشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .symptoms-container {
+    flex-direction: column;
+    gap: 20px;
   }
-  to {
-    opacity: 1;
+
+  .symptoms-box, .symptoms-image {
+    max-width: 100%;
   }
 }
+
+
+
+.video-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+/* جعل الفيديو مستطيل بنسبة 16:9 */
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 30%; /* يحافظ على نسبة 16:9 */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+/* تحسين التجاوب مع الشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .video-container {
+    width: 95%;
+    padding-top: 56.25%; /* نسبة 16:9 للفيديو */
+  }
+}
+
+
+
+
+.quick-facts {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.facts-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fact-box {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  max-width: 300px;
+}
+
+.fact-box i {
+  font-size: 40px;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+
+/* الحاوية الرئيسية */
+.diagnosis-info {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #2c3e50, #34495e); /* تدرج ألوان جذاب */
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* العنوان */
+.diagnosis-info h2 {
+  font-size: 30px;
+  color: #ffcc00; /* لون مميز */
+  margin-bottom: 10px;
+}
+
+/* النص التوضيحي */
+.diagnosis-info .intro-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f1c40f; /* لون جذاب */
+}
+
+/* النص العام */
+.diagnosis-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
+  padding: 10px 0;
+}
+
+/* الحاوية التي تحتوي على الصورة والزر */
+.diagnosis-container {
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* تنسيق الصورة */
+.diagnosis-container img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px; /* مسافة بين الصورة والزر */
+}
+
+/* تأثير عند تمرير الماوس على الصورة */
+.diagnosis-container img:hover {
+  transform: scale(1.05);
+}
+
+/* تنسيق الزر */
+.prediction-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #ffcc00; /* لون جذاب */
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.prediction-button:hover {
+  background-color: #ff9900; /* تغيير اللون عند التمرير */
+}
+
+/* تحسين العرض على الشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .diagnosis-info {
+    padding: 30px 15px;
+  }
+
+  .diagnosis-info h2 {
+    font-size: 26px;
+  }
+
+  .diagnosis-info p {
+    font-size: 16px;
+  }
+
+  .diagnosis-container img {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+.news {
+  padding: 40px;
+  text-align: center;
+}
+
+.news-item {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+

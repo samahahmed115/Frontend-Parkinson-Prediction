@@ -1,19 +1,24 @@
 .login-container {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 40%;
     text-align: center;
     margin: 0 auto;
     margin-top: 100px;
+    margin-bottom: 100px;
+    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; /* تأثير بارز */
 }
 
+/* العنوان */
 h2 {
     margin-bottom: 20px;
-    color: #333;
+    font-size: 24px;
+    color: #0c0c0c;
 }
 
+/* تنسيق الحقول */
 .input-group {
     margin-bottom: 15px;
     text-align: left;
@@ -22,42 +27,80 @@ h2 {
 .input-group label {
     display: block;
     margin-bottom: 5px;
+    font-size: 14px;
     color: #555;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f8f9fa;
+    box-shadow: inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff; /* تأثير بارز */
+    outline: none;
+    transition: 0.3s;
 }
 
+/* تحسين التركيز */
+.input-group input:focus {
+    background: #fff;
+    box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff;
+    border: 1px solid #2b79df;
+}
+
+/* زر تسجيل الدخول */
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #2b79df;
+    padding: 12px;
+    background: #2b79df;
     border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
     cursor: pointer;
+    transition: 0.3s;
 }
 
+/* تحسين زر تسجيل الدخول عند التحويم */
 button:hover {
-    background-color: #2b79df;
+    background: #2365c0;
+    box-shadow: inset 3px 3px 6px #bebebe, inset -3px -3px 6px #ffffff;
 }
 
+/* النصوص */
 p {
     margin-top: 15px;
     color: #555;
+    font-size: 14px;
 }
 
+/* الروابط */
 a {
     color: #2b79df;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #2365c0;
+}
+
+.error-message {
+    color: rgb(197, 194, 36);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/* تحسين التصميم للشاشات الصغيرة */
+@media screen and (max-width: 400px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
 }

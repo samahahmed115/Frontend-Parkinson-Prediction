@@ -1,28 +1,57 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
+  imports: [RouterLink],
   templateUrl: './home.component.html',
-  imports: [CommonModule],
   styleUrls: ['./home.component.css']
+   
 })
 export class HomeComponent {
-  images = [
-    '/public/home1.jpg',
-    '/public/home2.jpg',
-    '/public/home3.jpg'
-  ];
-  currentIndex = 0;
-public: any;
+  images: string[] =
+   ['home4.jpg', 
+    'home2.jpg', 
+    'home5.jpg',
+  'home6.jpg'];
+  currentIndex: number = 0;
+  interval: any;
 
-  constructor() {
-    setInterval(() => {
-      this.nextSlide();
-    }, 3000); // تغيير الصورة كل 3 ثواني
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.startSlideshow();
+    }
   }
 
-  nextSlide() {
+  get currentImage(): string {
+    return this.images[this.currentIndex];
+  }
+
+  nextImage(): void {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
   }
+
+  previousImage(): void {
+    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+  }
+
+  goToImage(index: number): void {
+    this.currentIndex = index;
+  }
+
+  startSlideshow(): void {
+    this.interval = setInterval(() => {
+      this.nextImage();
+    }, 3000);
+  }
+
+  ngOnDestroy() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
 }
+
+
+

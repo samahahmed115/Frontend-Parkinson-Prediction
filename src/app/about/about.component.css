@@ -1,0 +1,291 @@
+/* Main About Section */
+.about-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #2c3e50, #34495e); /* Elegant gradient */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+  }
+  
+  /* Section Title */
+  .about-section h2 {
+    font-size: 32px;
+    color: #ffcc00; /* Highlight color */
+    margin-bottom: 15px;
+  }
+  
+  /* Introduction Text */
+  .about-section .intro-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f1c40f;
+  }
+  
+  /* Content Paragraphs */
+  .about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+    padding: 10px 0;
+  }
+  
+  /* Features Container */
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  /* Feature Box */
+  .feature-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .feature-box:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Feature Icons */
+  .feature-box i {
+    font-size: 40px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+
+  /* Features Section */
+.features-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #2c3e50, #34495e); /* Modern gradient background */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  
+  /* Features Grid */
+  .features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Individual Feature Card */
+  .feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card h3 {
+    color: #ffcc00;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .features-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+
+
+  /* Statistics Section */
+.statistics-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 100px;
+    color: rgb(17, 17, 17);
+    border-radius: 10px;
+   
+  }
+  
+  /* Stats Container */
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  /* Individual Stat Box */
+  .stat-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    width: 250px;
+  }
+  
+  .stat-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-box h3 {
+    font-size: 30px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  .stat-box p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
+
+
+  .creator-section {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  background: linear-gradient(to right, #2c3e50, #34495e);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+/* Layout: Image beside Text */
+.creator-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Image Section */
+.creator-image {
+  flex: 1;
+  text-align: center;
+}
+
+.creator-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #ffcc00;
+  display: block;
+  margin: auto;
+}
+
+/* LinkedIn Icon */
+.linkedin-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.linkedin-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Text Section */
+.creator-text {
+  flex: 2;
+  text-align: left;
+}
+
+.creator-text h2 {
+  font-size: 28px;
+  color: #ffcc00;
+}
+
+.creator-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Contact Us Button */
+.contact-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #ffcc00; /* Button Color */
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .contact-button:hover {
+    background-color: #ff9900; /* Change color on hover */
+  }
+  
+
+/* Responsive Design: Stack Image and Text on Small Screens */
+@media screen and (max-width: 768px) {
+  .creator-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .creator-text {
+    text-align: center;
+  }
+}

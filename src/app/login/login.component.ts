@@ -11,16 +11,20 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
+  email: string = '';
   password: string = '';
+  emailError: boolean = false;
+  passwordError: boolean = false;
 
   onSubmit() {
-    if (this.username && this.password) {
-      console.log('Username:', this.username);
+    // إعادة تعيين الأخطاء
+    this.emailError = !this.email;
+    this.passwordError = !this.password;
+
+    if (!this.emailError && !this.passwordError) {
+      console.log('Email:', this.email);
       console.log('Password:', this.password);
-      // يمكنك هنا إضافة منطق إرسال البيانات إلى الخادم
-    } else {
-      alert('Please fill in all fields.');
+      // يمكنك هنا إرسال البيانات إلى الخادم
     }
   }
 }

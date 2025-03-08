@@ -1,43 +1,129 @@
+<div class="slideshow-container">
+  <h1 class="slideshow-title"><b>Welcome to the Parkinson's Disease Website</b></h1>
 
+  <img [src]=" currentImage" alt="Slideshow Image" class="slide-image" />
 
-<div class="slider">
-  <div class="slide" *ngFor="let img of public; let i = index" [class.active]="i === currentIndex">
-    <img [src]="img" alt="Slide {{ i + 1 }}">
+  <!-- نقاط التنقل (تمت إضافتها يدويًا بدون *ngFor) -->
+  <div class="dots-container">
+    <span class="dot" [class.active]="currentIndex === 0" (click)="goToImage(0)"></span>
+    <span class="dot" [class.active]="currentIndex === 1" (click)="goToImage(1)"></span>
+    <span class="dot" [class.active]="currentIndex === 2" (click)="goToImage(2)"></span>
+    <span class="dot" [class.active]="currentIndex === 3" (click)="goToImage(2)"></span>
   </div>
 </div>
 
+<section class="about-section">
+  <h2 class="about-title">What is Parkinson's Disease?</h2>
+  <div class="about-container">
+    <div class="about-box">
+      <p>Parkinson's Disease is a progressive neurological disorder that affects movement. 
+         It starts with mild symptoms such as tremors and muscle stiffness, 
+         and can progress to issues with balance and walking.</p>
+    </div>
+    <div class="about-box">
+      <p>As the disease advances, individuals may experience difficulty with speech, writing, 
+         and other motor functions. While there is no cure, treatments and lifestyle adjustments 
+         can help manage symptoms and improve quality of life.</p>
+    </div>
+  </div>
+</section>
 
-<div class="home-page">
-  <header class="header">
-    
-
-    <h1>Welcome to the Parkinson's Disease Website</h1>
-    <p>This website is dedicated to providing information and support for individuals and families affected by Parkinson's Disease.</p>
-  </header>
-
-  <section class="about-section">
-    <h2>What is Parkinson's Disease?</h2>
-    <p>Parkinson's Disease is a progressive neurological disorder that affects movement. It starts with mild symptoms such as tremors and muscle stiffness, and can progress to issues with balance and walking.</p>
-  </section>
-
-  <section class="symptoms-section">
-    <h2>Symptoms of the Disease</h2>
-    <ul>
-      <li>Tremors in the hands, arms, or legs</li>
-      <li>Muscle stiffness</li>
-      <li>Slowness of movement</li>
-      <li>Balance problems</li>
-    </ul>
-  </section>
-
-  <section class="resources-section">
-    <h2>Useful Resources</h2>
-    <p>Here are some resources that may help you understand and manage the disease:</p>
-    <ul>
-      <li><a href="https://www.parkinson.org" target="_blank">Parkinson's Foundation</a></li>
-      <li><a href="https://www.michaeljfox.org" target="_blank">Michael J. Fox Foundation</a></li>
-    </ul>
-  </section>
-
+<section class="symptoms-section">
  
-</div>
+  <div class="symptoms-container">
+    <div class="symptoms-box">
+      <h2 class="symptoms-title">Symptoms of the Disease</h2>
+      <ul>
+        <li><span>&#10004;</span> Tremors in the hands, arms, or legs</li>
+        <li><span>&#10004;</span> Muscle stiffness</li>
+        <li><span>&#10004;</span> Slowness of movement</li>
+        <li><span>&#10004;</span> Balance problems</li>
+      </ul>
+    </div>
+    <div class="symptoms-image">
+      <img src="home1.jpg" alt="Parkinson's Symptoms">
+    </div>
+  </div>
+</section>
+
+
+
+<section class="video-section">
+  <h2>Understanding Parkinson’s Disease</h2>
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/IDwZpj90nY8?start=6" 
+      title="Understanding Parkinson’s Disease"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+
+<section class="quick-facts">
+  <h2>Quick Facts about Parkinson’s</h2>
+  <div class="facts-container">
+    <div class="fact-box">
+      <i class="fas fa-brain"></i>
+      <p>10 million people worldwide have Parkinson’s</p>
+    </div>
+    <div class="fact-box">
+      <i class="fas fa-dna"></i>
+      <p>Genetics play a role in 10-15% of cases</p>
+    </div>
+    <div class="fact-box">
+      <i class="fas fa-user-md"></i>
+      <p>No cure, but treatments help manage symptoms</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="diagnosis-info">
+  <h2>How Does Our Diagnosis Work?</h2>
+  <p class="intro-text">Now that we’ve learned about the disease, let’s explore how our website can help you!</p>
+  <p>We use AI-powered machine learning models to analyze symptoms and provide early detection results, helping you take the first step towards better health.</p>
+  
+  <div class="diagnosis-container">
+    هحط فيديوي توضيحي ازاي بيشتغل
+    <img src="ai-diagnosis.png" alt="AI Diagnosis Illustration">
+    
+    <div class="prediction-link">
+      <p>Start your diagnosis now:</p>
+      <a  routerLink="/Prediction"  class="prediction-button">Try AI Diagnosis</a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="news">
+  <h2>Useful Resources</h2>
+  <div class="news-item">
+    
+    <p>Here are some resources that may help you understand and manage the disease:</p>
+    <a href="https://www.parkinson.org">Read more</a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
