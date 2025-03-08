@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/Frontend-Parkinson-Prediction": {},
+    "/Frontend-Parkinson-Prediction/About": {},
+    "/Frontend-Parkinson-Prediction/Home": {},
+    "/Frontend-Parkinson-Prediction/Login": {},
+    "/Frontend-Parkinson-Prediction/Prediction": {},
+    "/Frontend-Parkinson-Prediction/Signup": {},
+    "/Frontend-Parkinson-Prediction/contact": {}
+  }
+}
